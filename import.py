@@ -63,7 +63,7 @@ result = session_requests.post(
 
 print("Login: " + str(result.status_code))
 
-end_date = datetime.now(ZoneInfo(general_config['timezone']) - timedelta(days=1) # yesterday
+end_date = datetime.now(ZoneInfo(general_config['timezone'])) - timedelta(days=1) # yesterday
 start_date = end_date - timedelta(days=30) # 30 days before yesterday
 
 end_date_str = end_date.strftime("%Y-%m-%d")
