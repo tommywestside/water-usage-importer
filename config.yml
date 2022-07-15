@@ -8,4 +8,5 @@ veolia_config:
   pass: ""
   remember_me: 1
   form_build_id: "form-3RWMkWva3wLxaDFLR1P9Mzo5ueLlxe3T4z4nr6lmBQQ"
-  
+general:
+  timezone: "America/New_York"

@@ -3,6 +3,7 @@ from datetime import datetime
 import csv
 from io import StringIO
 import yaml
+from zoneinfo import ZoneInfo
 from datetime import datetime, timedelta
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS, ASYNCHRONOUS
@@ -13,6 +14,7 @@ with open("/data/config.yml", "r") as stream:
         config_yaml = yaml.safe_load(stream)
         db_config = config_yaml['db_config']
         veolia_config = config_yaml['veolia_config']
+        general_config = config_yaml['general']
     except yaml.YAMLError as exc:
         print(exc)
 
@@ -61,7 +63,7 @@ result = session_requests.post(
 
 print("Login: " + str(result.status_code))
 
-end_date = datetime.today() - timedelta(days=1) # yesterday
+end_date = datetime.now(ZoneInfo(general_config['timezone']) - timedelta(days=1) # yesterday
 start_date = end_date - timedelta(days=30) # 30 days before yesterday
 
 end_date_str = end_date.strftime("%Y-%m-%d")
