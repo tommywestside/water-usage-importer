@@ -16,4 +16,6 @@ RUN crontab /etc/cron.d/water_usage_cron
 
 RUN /etc/init.d/cron restart
 
+RUN python import.py
+
 CMD [ "cron", "-f"]
