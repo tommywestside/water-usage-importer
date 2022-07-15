@@ -3,7 +3,7 @@ FROM python:3.9
 WORKDIR /app
 
 COPY requirements.txt .
-COPY sensor.py .
+COPY import.py .
 
 RUN pip install -r requirements.txt
 RUN apt-get update && apt-get install cron -y
