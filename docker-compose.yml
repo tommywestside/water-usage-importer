@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile
     privileged: true
     network_mode: host
-    entrypoint: ["python", "import.py"]
     volumes:
       - /data/water_usage_import/config.yml:/data/config.yml:ro
     restart: unless-stopped
