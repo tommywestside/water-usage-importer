@@ -67,6 +67,8 @@ start_date = end_date - timedelta(days=30) # 30 days before yesterday
 end_date_str = end_date.strftime("%Y-%m-%d")
 start_date_str = start_date.strftime("%Y-%m-%d")
 
+print(f"downloading data from {start_date_str} to {end_date_str}")
+
 usage_download_url = f"https://mywater.veolia.us/usage_download/desktop/{start_date_str}-{end_date_str}?destination=water-usage"
 result = session_requests.get(
 	usage_download_url,
