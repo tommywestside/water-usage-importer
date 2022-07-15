@@ -1,0 +1,13 @@
+version: '3.7'
+services: 
+  water_usage_import:
+    image: 'water_usage_import:latest'
+    container_name: 'water_usage_import'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    privileged: true
+    network_mode: host
+    volumes:
+      - /data/water_usage_import/config.yml:/data/config.yml:ro
+    restart: unless-stopped

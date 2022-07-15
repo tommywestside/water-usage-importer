@@ -1,0 +1,11 @@
+db_config:
+  influx_db_token: ""
+  influx_db_org: ""
+  influx_db_bucket: ""
+  influx_db_url: ""
+veolia_config:
+  name: ""
+  pass: ""
+  remember_me: 1
+  form_build_id: "form-3RWMkWva3wLxaDFLR1P9Mzo5ueLlxe3T4z4nr6lmBQQ"
+  
