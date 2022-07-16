@@ -10,5 +10,5 @@ services:
     network_mode: host
     volumes:
       - /data/water_usage_import/config.yml:/data/config.yml:ro
-      - /data/water_usage_import/logs:/data/logs
+      - /data/water_usage_import/logs:/logs
     restart: unless-stopped
