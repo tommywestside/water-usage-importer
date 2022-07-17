@@ -13,8 +13,10 @@ RUN echo '15 22 * * * python /app/import.py >> /var/log/cron.log 2>&1 \n' >> /et
 
 RUN chmod 0644 /etc/cron.d/water_usage_cron
 RUN crontab /etc/cron.d/water_usage_cron
-RUN touch /logs/import.log
+RUN touch /var/log/cron.log
+RUN date
 
 RUN /etc/init.d/cron restart
 
 CMD cron && tail -f /var/log/cron.log
+
