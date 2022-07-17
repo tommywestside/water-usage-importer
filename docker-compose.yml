@@ -13,3 +13,4 @@ services:
     volumes:
       - /data/water_usage_import/config.yml:/data/config.yml:ro
     restart: unless-stopped
+    user: root
