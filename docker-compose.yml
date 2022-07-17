@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     privileged: true
     network_mode: host
+    environment:
+      - TZ=America/New_York
     volumes:
       - /data/water_usage_import/config.yml:/data/config.yml:ro
     restart: unless-stopped
